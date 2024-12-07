@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  db:
+    image: "oliviakarathanou/postgres-db-match-app:v1.0.0"
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db-postgres/create.sql:/docker-entrypoint-initdb.d/create.sql
+    env_file:
+      - .env
+
+  app:
+    depends_on:
+      - db
+    image: "oliviakarathanou/match-odds-app:v1.0.0"
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+
