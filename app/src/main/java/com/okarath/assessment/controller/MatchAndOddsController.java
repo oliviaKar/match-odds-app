@@ -131,7 +131,7 @@ public class MatchAndOddsController {
     @Operation(summary = "Update odd for match")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "204", description = "Match odd updated successfully"),
-            @ApiResponse(responseCode = "404", description = "Match not found", content = @Content)
+            @ApiResponse(responseCode = "404", description = "Match odd not found", content = @Content)
     })
     @PatchMapping("/{matchId}/odds/{oddId}")
     public ResponseEntity<Void> updateOddForMatch(@PathVariable Long matchId, @PathVariable Long oddId,

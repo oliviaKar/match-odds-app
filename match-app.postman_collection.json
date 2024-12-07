@@ -27,7 +27,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{base_url}}/api/v1/matches/1",
+					"raw": "{{base_url}}/api/v1/matches/2",
 					"host": [
 						"{{base_url}}"
 					],
@@ -35,7 +35,7 @@
 						"api",
 						"v1",
 						"matches",
-						"1"
+						"2"
 					]
 				},
 				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
@@ -62,7 +62,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{base_url}}/api/v1/matches/1",
+					"raw": "{{base_url}}/api/v1/matches/2/odds",
 					"host": [
 						"{{base_url}}"
 					],
@@ -70,7 +70,8 @@
 						"api",
 						"v1",
 						"matches",
-						"1"
+						"2",
+						"odds"
 					]
 				},
 				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
@@ -97,15 +98,24 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{base_url}}/api/v1/matches/1",
+					"raw": "{{base_url}}/api/v1/matches?page=0&size=10",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
 						"v1",
-						"matches",
-						"1"
+						"matches"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						}
 					]
 				},
 				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
@@ -134,7 +144,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"teamA\": \"OSFP\",\n    \"teamB\": \"OSFP\",\n    \"date\": \"31/03/2021\",\n    \"time\": \"12:45\",\n    \"sport\": \"BASKETBALL\"\n}",
+					"raw": "{\n\t\"teamA\": \"PAO\",\n    \"teamB\": \"OSFP\",\n    \"date\": \"31/03/2021\",\n    \"time\": \"12:45\",\n    \"sport\": \"BASKETBALL\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -178,7 +188,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"matchId\": 1,\n    \"specifier\": \"X\",\n    \"odd\": 1.66\n}",
+					"raw": "{\n    \"specifier\": \"TWO\",\n    \"odd\": 1.66\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -186,7 +196,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{base_url}}/api/v1/matches/1/odds",
+					"raw": "{{base_url}}/api/v1/matches/2/odds",
 					"host": [
 						"{{base_url}}"
 					],
@@ -194,7 +204,7 @@
 						"api",
 						"v1",
 						"matches",
-						"1",
+						"2",
 						"odds"
 					]
 				},
@@ -368,7 +378,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{base_url}}/api/v1/matches/2",
+					"raw": "{{base_url}}/api/v1/matches/1",
 					"host": [
 						"{{base_url}}"
 					],
@@ -376,7 +386,7 @@
 						"api",
 						"v1",
 						"matches",
-						"2"
+						"1"
 					]
 				},
 				"description": "This is a DELETE request, and it is used to delete data that was previously created via a POST request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful DELETE request typically returns a `200 OK`, `202 Accepted`, or `204 No Content` response code."
